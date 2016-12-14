@@ -1,0 +1,46 @@
+.page-header{
+	margin:10px 0;
+}
+.page-header > .breadcrumb {
+	background: none;
+}
+.page-header > .breadcrumb li{
+	font-size:12px;
+}
+.full{
+	padding:0px;
+}
+div.dataTables_length, 
+div.dataTables_filter,
+div.dataTables_info,
+div.dt-buttons,
+div.dataTables_paginate {
+  padding: 10px;
+}
+.m-t-10{
+	margin-top:10px;
+}
+.breadcrumb{
+	margin-top:10px;
+}
+form.form-inline {
+  display: inline;
+}
+.additional-btn{
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	margin-right: 10px;
+	z-index: 9901;
+}
+.logo{
+	margin-bottom: 10px;
+}
+.logo-image{width:100px;}
+.login-social-or{margin-bottom:20px;}
+.credit{text-align: center;}
+.user-info{margin:20px 10px 20px 0px;}
+.profile-info{border-bottom:1px solid #dedede;margin-bottom:20px;}
+.user-avatar{float:left;margin-right:10px;}
+.user-info p>span{font-weight: bold;}
+.starred{color:gold;}

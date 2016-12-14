@@ -1,0 +1,4 @@
+<?php
+return array(
+	'user' => 'CURRENT_DATE_TIME, CURRENT_DATE, NAME, USERNAME, EMAIL,DATE_OF_BIRTH', 
+	);
