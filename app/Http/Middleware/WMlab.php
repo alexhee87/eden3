@@ -94,7 +94,7 @@ class WMLab
             ]);
 
         config(['app.name' => config('config.application_name')]);
-        $default_timezone = config('config.timezone_id') ? config('timezone.'.config('config.timezone_id')) : 'Asia/Kolkata';
+        $default_timezone = config('config.timezone_id') ? config('timezone.'.config('config.timezone_id')) : 'Asia/Kuching';
         date_default_timezone_set($default_timezone);
 
         $default_language = (cache()->has('lang')) ? cache('lang') : ((config('config.default_language')) ? : 'en' );

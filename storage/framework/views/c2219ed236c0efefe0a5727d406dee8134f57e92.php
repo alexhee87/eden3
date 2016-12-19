@@ -23,7 +23,7 @@
 					<div class="form-group">
 						<?php echo Form::label('form',trans('messages.form'),[]); ?>
 
-						<?php echo Form::select('form', config('custom_field'),'',['class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one')]); ?>
+						<?php echo Form::select('form', config('custom_field'),'',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')]); ?>
 
 					</div>
 					<div class="form-group">
@@ -50,7 +50,7 @@
                         'radio' => 'Radio Button',
                         'checkbox' => 'Check Box',
                         'textarea' => 'Textarea'
-                        ],'',['id' => 'type', 'class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one')]); ?>
+                        ],'',['id' => 'type', 'class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')]); ?>
 
 					</div>
 					<div class="custom-field-option">

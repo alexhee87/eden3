@@ -20,7 +20,7 @@
 					{!! Form::open(['route' => 'custom-field.store','role' => 'form', 'class'=>'custom-field-form','id' => 'custom-field-form','data-disable-enter-submission' => '1']) !!}
 					<div class="form-group">
 						{!! Form::label('form',trans('messages.form'),[])!!}
-						{!! Form::select('form', config('custom_field'),'',['class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one')])!!}
+						{!! Form::select('form', config('custom_field'),'',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')])!!}
 					</div>
 					<div class="form-group">
 						{!! Form::label('title',trans('messages.title'),[])!!}
@@ -43,7 +43,7 @@
                         'radio' => 'Radio Button',
                         'checkbox' => 'Check Box',
                         'textarea' => 'Textarea'
-                        ],'',['id' => 'type', 'class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one')])!!}
+                        ],'',['id' => 'type', 'class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')])!!}
 					</div>
 					<div class="custom-field-option">
 						{!! Form::label('options',trans('messages.option'),[]) !!}
