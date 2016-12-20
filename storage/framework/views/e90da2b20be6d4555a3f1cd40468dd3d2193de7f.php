@@ -3,7 +3,7 @@
 	<?php $__env->startSection('breadcrumb'); ?>
         <div class="row">
             <ul class="breadcrumb">
-			    <li><a href="/home"><?php echo trans('messages.home'); ?></a></li>
+			    <li><a href="<?php echo e(url('home')); ?>"><?php echo trans('messages.home'); ?></a></li>
 			    <li class="active"><?php echo trans('messages.user'); ?></li>
 			</ul>
         </div>
@@ -18,7 +18,7 @@
 
                         <?php if(Entrust::can('create-user')): ?>
                     	<div class="additional-btn">
-                    		<a href="/user/create" class="btn btn-sm btn-primary"><?php echo e(trans('messages.add_new')); ?></a>
+                    		<a href="<?php echo e(url('user/create')); ?>" class="btn btn-sm btn-primary"><?php echo e(trans('messages.add_new')); ?></a>
                     	</div>
                         <?php endif; ?>
                     </div>

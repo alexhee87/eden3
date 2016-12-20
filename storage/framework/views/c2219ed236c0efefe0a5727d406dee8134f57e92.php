@@ -3,7 +3,7 @@
 <?php $__env->startSection('breadcrumb'); ?>
 	<div class="row">
 		<ul class="breadcrumb">
-			<li><a href="/home"><?php echo trans('messages.home'); ?></a></li>
+			<li><a href="<?php echo e(url('home')); ?>"><?php echo trans('messages.home'); ?></a></li>
 			<li class="active"><?php echo trans('messages.custom').' '.trans('messages.field'); ?></li>
 		</ul>
 	</div>

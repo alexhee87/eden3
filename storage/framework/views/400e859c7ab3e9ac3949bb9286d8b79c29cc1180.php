@@ -18,7 +18,7 @@
                     &nbsp;
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/update">Update</a></li>
+                    <li><a href="<?php echo e(url('update')); ?>">Update</a></li>
                     <li><a href="http://support.wmlab.in">Support</a></li>
                 </ul>
             </div>

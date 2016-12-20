@@ -27,7 +27,7 @@
                 </div>
             </li>
             <li>
-                <a href="/home"><i class="fa fa-home fa-fw"></i> <span class="nav-label"><?php echo e(trans('messages.home')); ?></span></a>
+                <a href="<?php echo e(url('home')); ?>"><i class="fa fa-home fa-fw"></i> <span class="nav-label"><?php echo e(trans('messages.home')); ?></span></a>
             </li>
 
             <?php if(Entrust::can('manage-user') || Entrust::can('manage-role') || Entrust::can('manage-permissions')): ?>
@@ -35,34 +35,34 @@
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label"><?php echo e(trans('messages.users_management')); ?></span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <?php if(Entrust::can('manage-user')): ?>
-                        <li id="user"><a href="/user"><i class="fa fa-users fa-fw"></i> <?php echo e(trans('messages.user')); ?></a></li>
+                        <li id="user"><a href="<?php echo e(url('user')); ?>"><i class="fa fa-users fa-fw"></i> <?php echo e(trans('messages.user')); ?></a></li>
                     <?php endif; ?>
                     <?php if(Entrust::can('manage-role')): ?>
-                        <li id="role"><a href="/role"><i class="fa fa-user fa-fw"></i> <?php echo e(trans('messages.user').' '.trans('messages.role')); ?></a></li>
+                        <li id="role"><a href="<?php echo e(url('role')); ?>"><i class="fa fa-user fa-fw"></i> <?php echo e(trans('messages.user').' '.trans('messages.role')); ?></a></li>
                     <?php endif; ?>
                     <?php if(Entrust::can('manage-permission')): ?>
-                        <li id="permission"><a href="/permission"><i class="fa fa-lock fa-fw"></i> <?php echo e(trans('messages.permission')); ?></a></li>
+                        <li id="permission"><a href="<?php echo e(url('permission')); ?>"><i class="fa fa-lock fa-fw"></i> <?php echo e(trans('messages.permission')); ?></a></li>
                     <?php endif; ?>
                 </ul>
             </li>
             <?php endif; ?>
             <?php if(Entrust::can('manage-custom-field') && config('config.enable_custom_field')): ?>
-                <li id="custom-field"><a href="/custom-field"><i class="fa fa-wrench fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.custom').' '.trans('messages.field')); ?></span></a></li>
+                <li id="custom-field"><a href="<?php echo e(url('custom-field')); ?>"><i class="fa fa-wrench fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.custom').' '.trans('messages.field')); ?></span></a></li>
             <?php endif; ?>
             <?php if(Entrust::can('manage-language') && config('config.multilingual')): ?>
-                <li id="language"><a href="/language"><i class="fa fa-globe fa-fw"></i> <span class="nav-label"><?php echo e(trans('messages.language')); ?></span></a></li>
+                <li id="language"><a href="<?php echo e(url('language')); ?>"><i class="fa fa-globe fa-fw"></i> <span class="nav-label"><?php echo e(trans('messages.language')); ?></span></a></li>
             <?php endif; ?>
             <?php if(Entrust::can('manage-template') && config('config.enable_email_template')): ?>
-                <li id="template"><a href="/template"><i class="fa fa-envelope fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.email').' '.trans('messages.template')); ?></span></a></li>
+                <li id="template"><a href="<?php echo e(url('template')); ?>"><i class="fa fa-envelope fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.email').' '.trans('messages.template')); ?></span></a></li>
             <?php endif; ?>
             <?php if(config('config.enable_activity_log')): ?>
-            <li id="activity-log"><a href="/activity-log"><i class="fa fa-bars fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.activity').' '.trans('messages.log')); ?></span></a></li>
+            <li id="activity-log"><a href="<?php echo e(url('activity-log')); ?>"><i class="fa fa-bars fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.activity').' '.trans('messages.log')); ?></span></a></li>
             <?php endif; ?>
             <?php if(Entrust::can('manage-message') && config('config.enable_message')): ?>
-            <li id="message"><a href="/message"><i class="fa fa-paper-plane fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.message')); ?></span></a></li>
+            <li id="message"><a href="<?php echo e(url('message')); ?>"><i class="fa fa-paper-plane fa-fw"></i>  <span class="nav-label"><?php echo e(trans('messages.message')); ?></span></a></li>
             <?php endif; ?>
             <?php if(Entrust::can('manage-ip-filter') && config('config.enable_ip_filter')): ?>
-                <li id="ip-filter"><a href="/ip-filter"><i class="fa fa-ellipsis-v fa-fw"></i>  <span class="nav-label">IP <?php echo e(trans('messages.filter')); ?></span></a></li>
+                <li id="ip-filter"><a href="<?php echo e(url('ip-filter')); ?>"><i class="fa fa-ellipsis-v fa-fw"></i>  <span class="nav-label">IP <?php echo e(trans('messages.filter')); ?></span></a></li>
             <?php endif; ?>
 
         </ul>

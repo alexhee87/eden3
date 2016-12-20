@@ -4,7 +4,7 @@
             <div class="text-center">
                 <h1>404 <i class="fa fa-meh-o"></i> </h1>
                 <p><?php echo trans('messages.page_not_found'); ?></p>
-                <p><?php echo trans('messages.back_to'); ?> <a href="/"><?php echo trans('messages.home'); ?></a></p>
+                <p><?php echo trans('messages.back_to'); ?> <a href="<?php echo e(url('/')); ?>"><?php echo trans('messages.home'); ?></a></p>
             </div>
         </div>
     </div>

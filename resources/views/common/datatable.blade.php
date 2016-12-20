@@ -1,6 +1,6 @@
 
 	<div class="table-responsive">
-		<table class="table table-striped table-bordered table-hover datatable" style="width:100%;" data-table-source="{{ $table['source'] }}" data-table-title="{{ $table['title'] }}" id="{{ $table['id'] }}" {!! array_key_exists('form',$table) ? 'data-form="'.$table['form'].'"' : '' !!} {!! array_key_exists('disable-sorting',$table) ? 'data-disable-sorting="'.$table['disable-sorting'].'"' : '' !!}>
+		<table class="table table-striped table-bordered table-hover datatable" style="width:100%;" data-table-source="{{ url($table['source']) }}" data-table-title="{{ $table['title'] }}" id="{{ $table['id'] }}" {!! array_key_exists('form',$table) ? 'data-form="'.$table['form'].'"' : '' !!} {!! array_key_exists('disable-sorting',$table) ? 'data-disable-sorting="'.$table['disable-sorting'].'"' : '' !!}>
 			<thead>
 				<tr>
 					@foreach($table['data'] as $col_head)

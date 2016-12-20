@@ -37,11 +37,11 @@
 
                 <button type="submit" class="btn btn-primary block full-width m-b"><?php echo trans('messages.login'); ?></button>
                 <?php if(config('config.enable_forgot_password')): ?>
-                    <a href="/password/reset"><small><?php echo trans('messages.forgot').' '.trans('messages.password'); ?>?</small></a>
+                    <a href="<?php echo e(url('password/reset')); ?>"><small><?php echo trans('messages.forgot').' '.trans('messages.password'); ?>?</small></a>
                 <?php endif; ?>
                 <?php if(config('config.enable_user_registration')): ?>
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="/register"><?php echo trans('messages.create').' '.trans('messages.account'); ?></a>
+                <a class="btn btn-sm btn-white btn-block" href="<?php echo e(url('register')); ?>"><?php echo trans('messages.create').' '.trans('messages.account'); ?></a>
                 <?php endif; ?>
             </form>
             <p class="m-t"> <small>Brought to you by GIT Team © 2016</small> </p>

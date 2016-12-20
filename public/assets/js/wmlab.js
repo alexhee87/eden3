@@ -197,7 +197,7 @@ $(document).ready(function(){
           "url": datatable_language
         },
         "ajax": {
-          "url": "/"+$('#'+table_id).attr('data-table-source')+"/lists",
+          "url": $('#'+table_id).attr('data-table-source')+"/lists",
           "type": "post",
           "data": function(d){
             return datatablePostData(table_id);
