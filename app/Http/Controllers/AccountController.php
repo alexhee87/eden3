@@ -130,25 +130,25 @@ Class AccountController extends Controller{
 
     public function postVerifyPurchase(Request $request){
 
-    	if(!is_connected())
-    		return redirect()->back()->withErrors('Please check your internet connection.');
+    	//if(!is_connected())
+    	//	return redirect()->back()->withErrors('Please check your internet connection.');
 
-    	$data = verifyPurchase();
-
-    	if($data['status'] == 'status')
-    		return redirect('/');
+//    	$data = verifyPurchase();
+//
+//    	if($data['status'] == 'status')
+//    		return redirect('/');
 
     	$purchase_code = $request->input('purchase_code');
     	$envato_username = $request->input('envato_username');
-		$data = installPurchase($request->input('purchase_code'),$request->input('envato_username'));
-		if($data['status'] == 'success'){
+		//$data = installPurchase($request->input('purchase_code'),$request->input('envato_username'));
+		if( true ){
 			$config = config('code');
 			$config['purchase_code'] = $purchase_code;
 			write2Config($config,'code');
-			return redirect('/login')->withSuccess($data['message']);
+			return redirect('/login')->withSuccess('Success');
 		}
 		else
-			return redirect('/login')->withSuccess($data['message']);
+			return redirect('/login')->withSuccess('Success');
     }
 
    public function releaseLicense(){

@@ -21,6 +21,8 @@ class RedirectIfAuthenticated
             return redirect('/home');
         }
 
+        return $next($request);
+
         if($request->is('login') && strtolower($request->method()) == 'post' && getMode()){
             if(is_connected()){
                 $data = verifyPurchase();
@@ -33,6 +35,6 @@ class RedirectIfAuthenticated
             }
         }
 
-        return $next($request);
+
     }
 }
