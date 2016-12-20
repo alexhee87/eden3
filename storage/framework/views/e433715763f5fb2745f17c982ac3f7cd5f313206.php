@@ -33,6 +33,8 @@
 
     <?php echo Html::style('assets/custom/css/plugins/summernote/summernote-bs3.css'); ?>
 
+    <?php echo Html::style('assets/custom/css/plugins/iCheck/custom.css'); ?>
+
     <?php echo Html::style('assets/custom/css/plugins/summernote/summernote.css'); ?>
 
     <?php echo Html::style('assets/custom/css/plugins/chosen/bootstrap-chosen.css'); ?>

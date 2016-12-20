@@ -21,6 +21,7 @@
     {!! Html::style('assets/custom/css/plugins/select2/select2.min.css') !!}
     {!! Html::style('assets/custom/css/plugins/datapicker/datepicker3.css') !!}
     {!! Html::style('assets/custom/css/plugins/summernote/summernote-bs3.css') !!}
+    {!! Html::style('assets/custom/css/plugins/iCheck/custom.css') !!}
     {!! Html::style('assets/custom/css/plugins/summernote/summernote.css') !!}
     {!! Html::style('assets/custom/css/plugins/chosen/bootstrap-chosen.css') !!}
     <!-- Sweet Alert -->

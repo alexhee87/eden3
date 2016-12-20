@@ -34,7 +34,7 @@
 					</div>
 					<div class="form-group">
 						<div class="checkbox">
-							<input name="is_required" type="checkbox" class="switch-input" data-size="mini" data-on-text="Required" data-off-text="Optional" value="1" checked>
+							<input name="is_required" type="checkbox" class="icheckbox_square-green" data-size="mini" data-on-text="Required" data-off-text="Optional" value="1" checked>
 						</div>
 					</div>
 					<div class="form-group">

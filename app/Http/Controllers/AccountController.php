@@ -192,9 +192,10 @@ Class AccountController extends Controller{
 		$error = 0;
 		$checks = array();
 
+		/*
 		if(dirname($_SERVER['REQUEST_URI']) != '/' && str_replace('\\', '/', dirname($_SERVER['REQUEST_URI'])) != '/')
 			$checks[] = array('type' => 'error', 'message' => 'You are trying to install this application in a subfolder "'.dirname($_SERVER['REQUEST_URI']).'"');
-		else
+		else */
 			$checks[] = array('type' => 'success', 'message' => ' Installation directory "'.$_SERVER['SERVER_NAME'].'"');
 
 		$server = $_SERVER['SERVER_SOFTWARE'];
