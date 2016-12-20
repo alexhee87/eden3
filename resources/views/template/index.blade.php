@@ -3,7 +3,7 @@
 	@section('breadcrumb')
         <div class="row">
 			<ul class="breadcrumb">
-			    <li><a href="/home">{!! trans('messages.home') !!}</a></li>
+			    <li><a href="{{url('home')}}">{!! trans('messages.home') !!}</a></li>
 			    <li class="active">{!! trans('messages.template') !!}</li>
 			</ul>
 		</div>
@@ -31,7 +31,7 @@
                     <div class="panel-heading">
                     	<strong>{!! trans('messages.list_all') !!}</strong> {!! trans('messages.template') !!}
                     	<div class="additional-btn">
-                    		<a href="/email" class="btn btn-sm btn-primary">{{trans('messages.email').' '.trans('messages.log')}}</a>
+                    		<a href="{{url('email')}}" class="btn btn-sm btn-primary">{{trans('messages.email').' '.trans('messages.log')}}</a>
 							<a href="#" data-toggle="collapse" data-target="#box-detail"><button class="btn btn-sm btn-primary"><i class="fa fa-plus icon"></i> {!! trans('messages.add_new') !!}</button></a>
 						</div>
                     </div>

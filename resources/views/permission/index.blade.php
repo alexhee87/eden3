@@ -3,7 +3,7 @@
 	@section('breadcrumb')
         <div class="row">
             <ul class="breadcrumb">
-			    <li><a href="/home">{!! trans('messages.home') !!}</a></li>
+			    <li><a href="{{url('home')}}">{!! trans('messages.home') !!}</a></li>
 			    <li class="active">{!! trans('messages.permission') !!}</li>
 			</ul>
         </div>
@@ -28,7 +28,7 @@
                     <div class="panel-heading">
                         <strong>{!!trans('messages.list_all').'</strong> '.trans('messages.permission')!!}</strong>
                         <div class="additional-btn">
-                        	<a href="/save-permission" class="btn btn-primary btn-sm">{{trans('messages.permission_edit_roles')}}</a>
+                        	<a href="{{url('save-permission')}}" class="btn btn-primary btn-sm">{{trans('messages.permission_edit_roles')}}</a>
                         </div>
                     </div>
                     <div class="panel-body full">

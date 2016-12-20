@@ -3,7 +3,7 @@
     @section('breadcrumb')
         <div class="row">
             <ul class="breadcrumb">
-			    <li><a href="/home">{!! trans('messages.home') !!}</a></li>
+			    <li><a href="{{url('home')}}">{!! trans('messages.home') !!}</a></li>
 			    <li class="active">Terms & Conditions</li>
 			</ul>
         </div>

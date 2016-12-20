@@ -28,7 +28,7 @@
                                 <button type="submit" class="btn btn-success btn-block"><i class="fa fa-unlock"></i> Verify</button>
                             </div>
                             <div class="col-sm-6">
-                                <a href="/login" class="btn btn-block btn-info">{!! trans('messages.back_to').' '.trans('messages.login') !!}</a>
+                                <a href="{{url('login')}}" class="btn btn-block btn-info">{!! trans('messages.back_to').' '.trans('messages.login') !!}</a>
                             </div>
                         </div>
                         </form>

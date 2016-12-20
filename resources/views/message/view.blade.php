@@ -3,8 +3,8 @@
 	@section('breadcrumb')
 		<div class="row">
 			<ul class="breadcrumb">
-			    <li><a href="/home">{!! trans('messages.home') !!}</a></li>
-			    <li><a href="/message">{!! trans('messages.message') !!}</a></li>
+			    <li><a href="{{url('home')}}">{!! trans('messages.home') !!}</a></li>
+			    <li><a href="{{url('message')}}">{!! trans('messages.message') !!}</a></li>
 			    <li class="active">{{$message->subject}}</li>
 			</ul>
 		</div>

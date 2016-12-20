@@ -36,11 +36,11 @@
 
                 <button type="submit" class="btn btn-primary block full-width m-b">{!! trans('messages.login') !!}</button>
                 @if(config('config.enable_forgot_password'))
-                    <a href="/password/reset"><small>{!! trans('messages.forgot').' '.trans('messages.password') !!}?</small></a>
+                    <a href="{{url('password/reset')}}"><small>{!! trans('messages.forgot').' '.trans('messages.password') !!}?</small></a>
                 @endif
                 @if(config('config.enable_user_registration'))
                 <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="/register">{!! trans('messages.create').' '.trans('messages.account') !!}</a>
+                <a class="btn btn-sm btn-white btn-block" href="{{url('register')}}">{!! trans('messages.create').' '.trans('messages.account') !!}</a>
                 @endif
             </form>
             <p class="m-t"> <small>Brought to you by GIT Team © 2016</small> </p>

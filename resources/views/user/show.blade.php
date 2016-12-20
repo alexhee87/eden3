@@ -3,8 +3,8 @@
 	@section('breadcrumb')
         <div class="row">
             <ul class="breadcrumb">
-			    <li><a href="/home">{!! trans('messages.home') !!}</a></li>
-                <li><a href="/user">{!! trans('messages.user') !!}</a></li>
+			    <li><a href="{{url('home')}}">{!! trans('messages.home') !!}</a></li>
+                <li><a href="{{url('user')}}">{!! trans('messages.user') !!}</a></li>
 			    <li class="active">{!! $user->full_name !!}</li>
 			</ul>
         </div>
@@ -63,7 +63,7 @@
                             </table>
                             <div class="row" style="padding:10px;">
                                 <div class="col-md-6">
-                                    <a href="#" data-href="/change-password" class="btn btn-block btn-primary">{{trans('messages.change').' '.trans('messages.password')}}</a>
+                                    <a href="#" data-href="{{url('change-password')}}" class="btn btn-block btn-primary">{{trans('messages.change').' '.trans('messages.password')}}</a>
                                 </div>
                                 <div class="col-md-6">
                                     <a href="#" onclick="event.preventDefault();

@@ -8,11 +8,11 @@
             </li>
 
             @if(Entrust::can('manage-backup') && config('config.enable_backup'))
-                <li><a href="/backup"><i class="fa fa-database fa-lg icon" data-toggle="tooltip" data-placement="left" title="{{trans('messages.backup')}}"></i></a></li>
+                <li><a href="{{url('backup')}}"><i class="fa fa-database fa-lg icon" data-toggle="tooltip" data-placement="left" title="{{trans('messages.backup')}}"></i></a></li>
             @endif
 
             @if(Entrust::can('manage-configuration'))
-            <li><a href="/configuration"><i class="fa fa-cogs fa-lg icon" data-toggle="tooltip" data-placement="left" title="{{trans('messages.configuration')}}"></i></a></li>
+            <li><a href="{{url('configuration')}}"><i class="fa fa-cogs fa-lg icon" data-toggle="tooltip" data-placement="left" title="{{trans('messages.configuration')}}"></i></a></li>
             @endif
 
             @if(Entrust::can('manage-todo') && config('config.enable_to_do'))
@@ -27,7 +27,7 @@
                     <li class="active"><a href="#" style="color:white;cursor:default;">{!! config('lang.'.$default_language.'.language').' ('.$default_language.')' !!}</a></li>
                     @foreach(config('lang') as $key => $language)
                         @if($default_language != $key)
-                        <li><a href="/set-language/{{$key}}">{!! $language['language']." (".$key.")" !!}</a></li>
+                        <li><a href="{{url('set-language/'.$key)}}">{!! $language['language']." (".$key.")" !!}</a></li>
                         @endif
                     @endforeach
                 </ul>
@@ -38,7 +38,7 @@
                     <i class="fa fa-user fa-fw" data-toggle="tooltip" title="{!! trans('messages.profile') !!}" data-placement="left"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#" data-href="/change-password" data-toggle="modal" data-target="#myModal"><i class="fa fa-key fa-fw"></i> {!! trans('messages.change').' '.trans('messages.password') !!}</a></li>
+                    <li><a href="#" data-href="{{url('change-password')}}" data-toggle="modal" data-target="#myModal"><i class="fa fa-key fa-fw"></i> {!! trans('messages.change').' '.trans('messages.password') !!}</a></li>
                     @if(config('code.mode') && defaultRole())
                         <li><a href="#" data-href="/check-update" data-toggle='modal' data-target='#myModal'><i class="fa fa-search fa-fw"></i> {!! trans('messages.check').' '.trans('messages.update') !!}</a></li>
                         <li><a href="/release-license"><i class="fa fa-hand-spock-o fa-fw"></i> {!! trans('messages.release_license') !!}</a></li>

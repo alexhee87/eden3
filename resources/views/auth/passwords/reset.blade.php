@@ -39,7 +39,7 @@
                                              <button type="submit" class="btn btn-block btn-success">{!! trans('messages.reset').' '.trans('messages.password') !!}</button>
                                         </div>
                                         <div class="col-md-6">
-                                            <a href="/login" class="btn btn-block btn-info">{!! trans('messages.back_to').' '.trans('messages.login') !!}</a>
+                                            <a href="{{url('login')}}" class="btn btn-block btn-info">{!! trans('messages.back_to').' '.trans('messages.login') !!}</a>
                                         </div>
                                     </div>
                                 </div>

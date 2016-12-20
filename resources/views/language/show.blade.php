@@ -3,8 +3,8 @@
 	@section('breadcrumb')
 		<div class="row">
 			<ul class="breadcrumb">
-			    <li><a href="/home">{!! trans('messages.home') !!}</a></li>
-			    <li><a href="/language">{!! trans('messages.language') !!}</a></li>
+			    <li><a href="{{url('home')}}">{!! trans('messages.home') !!}</a></li>
+			    <li><a href="{{url('language')}}">{!! trans('messages.language') !!}</a></li>
 			    <li class="active">{!! config('lang.'.$locale.'.language') !!}</li>
 			</ul>
 		</div>

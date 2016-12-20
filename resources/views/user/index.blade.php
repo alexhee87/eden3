@@ -3,7 +3,7 @@
 	@section('breadcrumb')
         <div class="row">
             <ul class="breadcrumb">
-			    <li><a href="/home">{!! trans('messages.home') !!}</a></li>
+			    <li><a href="{{url('home')}}">{!! trans('messages.home') !!}</a></li>
 			    <li class="active">{!! trans('messages.user') !!}</li>
 			</ul>
         </div>
@@ -17,7 +17,7 @@
                     <div class="panel-heading"><strong>{{trans('messages.list_all')}}</strong> {{trans('messages.user')}}
                         @if(Entrust::can('create-user'))
                     	<div class="additional-btn">
-                    		<a href="/user/create" class="btn btn-sm btn-primary">{{trans('messages.add_new')}}</a>
+                    		<a href="{{url('user/create')}}" class="btn btn-sm btn-primary">{{trans('messages.add_new')}}</a>
                     	</div>
                         @endif
                     </div>
