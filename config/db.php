@@ -1,6 +1,6 @@
 <?php return array (
-  'hostname' => 'localhost',
-  'database' => 'elkengit',
-  'username' => 'root',
-  'password' => '',
+  'hostname' => env('DB_HOST','localhost'),
+  'database' => env('DB_DATABASE','elkengit'),
+  'username' => env('DB_USERNAME','root'),
+  'password' => env('DB_PASSWORD',''),
 );
