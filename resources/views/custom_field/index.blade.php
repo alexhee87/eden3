@@ -27,8 +27,15 @@
 						{!! Form::input('text','title','',['class'=>'form-control','placeholder'=>trans('messages.title')])!!}
 					</div>
 					<div class="form-group">
-						<div class="checkbox">
-							<input name="is_required" type="checkbox" class="switch-input" data-size="mini" data-on-text="Required" data-off-text="Optional" value="1" checked>
+						Required
+						<div class="switch">
+							<div class="onoffswitch">
+								<input name="is_required" type="checkbox" checked class="onoffswitch-checkbox" id="is_required">
+								<label class="onoffswitch-label" for="is_required">
+									<span class="onoffswitch-inner"></span>
+									<span class="onoffswitch-switch"></span>
+								</label>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
