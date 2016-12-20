@@ -439,10 +439,13 @@ $(document).ready(function(){
     });
 
     //sidebar active
-    var pathName = (window.location.pathname).replace(/^\//, "").split('/')[0];
-    $('li.'+pathName).addClass('active');
-    $('li.'+pathName).children('ul').removeClass('collapse');
-    $('li#'+pathName).addClass('active');
+    var pathName = (window.location.pathname).replace(/^\//, "").split('/');
+    for(var i=0; i < pathName.length; i++){
+        $('li.'+pathName[i]).addClass('active');
+        $('li.'+pathName[i]).children('ul').removeClass('collapse');
+        $('li#'+pathName[i]).addClass('active');
+    }
+
 
 
     //activate chosen

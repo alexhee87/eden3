@@ -3,7 +3,7 @@
 	<?php $__env->startSection('breadcrumb'); ?>
         <div class="row">
             <ul class="breadcrumb">
-			    <li><a href="/home"><?php echo trans('messages.home'); ?></a></li>
+			    <li><a href="<?php echo e(url('home')); ?>"><?php echo trans('messages.home'); ?></a></li>
 			    <li class="active"><?php echo trans('messages.permission'); ?></li>
 			</ul>
         </div>
@@ -31,7 +31,7 @@
                     <div class="panel-heading">
                         <strong><?php echo trans('messages.list_all').'</strong> '.trans('messages.permission'); ?></strong>
                         <div class="additional-btn">
-                        	<a href="/save-permission" class="btn btn-primary btn-sm"><?php echo e(trans('messages.permission_edit_roles')); ?></a>
+                        	<a href="<?php echo e(url('save-permission')); ?>" class="btn btn-primary btn-sm"><?php echo e(trans('messages.permission_edit_roles')); ?></a>
                         </div>
                     </div>
                     <div class="panel-body full">
