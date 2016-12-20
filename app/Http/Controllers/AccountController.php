@@ -47,6 +47,7 @@ Class AccountController extends Controller{
 		$envato_username = $request->input('envato_username');
 		$email = $request->input('email');
 		$mysql_database = $request->input('mysql_database');
+		/*
 		$data = installPurchase($purchase_code,$envato_username,$email);
 
 		if($data['status'] != 'success'){
@@ -56,6 +57,7 @@ Class AccountController extends Controller{
 	        }
 			return redirect('/update')->withInput()->withErrors($data['message']);
 		}
+		*/
 
 
 		if (!is_writable('../config/db.php')){
