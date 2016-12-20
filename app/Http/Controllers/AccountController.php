@@ -261,6 +261,7 @@ Class AccountController extends Controller{
 		$envato_username = $request->input('envato_username');
 		$registered_email = $request->input('email');
 		$mysql_database = $request->input('mysql_database');
+        /*
 		$data = installPurchase($purchase_code,$envato_username,$registered_email);
 
 		if($data['status'] != 'success')
@@ -273,6 +274,7 @@ Class AccountController extends Controller{
             }
             return redirect('/home')->withErrors('Username can only contain alphanumeric, underscore & period.');
         }
+        */
 
 		if (!is_writable('../config/db.php'))
 			return redirect()->back()->withInput()->withErrors('db.php file is not writable.');
