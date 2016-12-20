@@ -149,7 +149,7 @@ Class AccountController extends Controller{
 		}
 		else
 			return redirect('/login')->withSuccess('Success');
-    }
+
 
    public function releaseLicense(){
     	if(!config('code.mode') || !defaultRole())

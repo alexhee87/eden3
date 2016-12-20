@@ -25,15 +25,12 @@ class AccountRequest extends FormRequest
         return [
             'hostname' => 'required',
             'mysql_username' => 'required',
-            'mysql_password' => 'required',
             'mysql_database' => 'required',
             'email' => 'required|email',
             'first_name' => 'required',
             'last_name' => 'required',
             'username' => 'required',
-            'password' => 'required',
-            'envato_username' => 'required',
-            'purchase_code' => 'required',
+            'password' => 'required'
         ];
     }
 }
