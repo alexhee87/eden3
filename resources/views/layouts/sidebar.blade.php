@@ -26,7 +26,7 @@
                 </div>
             </li>
             <li>
-                <a href="/home"><i class="fa fa-home fa-fw"></i> <span class="nav-label">{{trans('messages.home') }}</span></a>
+                <a href="{{url('home')}}"><i class="fa fa-home fa-fw"></i> <span class="nav-label">{{trans('messages.home') }}</span></a>
             </li>
 
             @if(Entrust::can('manage-user') || Entrust::can('manage-role') || Entrust::can('manage-permissions'))
@@ -34,34 +34,34 @@
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">{{trans('messages.users_management') }}</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     @if(Entrust::can('manage-user'))
-                        <li id="user"><a href="/user"><i class="fa fa-users fa-fw"></i> {{trans('messages.user') }}</a></li>
+                        <li id="user"><a href="{{url('user')}}"><i class="fa fa-users fa-fw"></i> {{trans('messages.user') }}</a></li>
                     @endif
                     @if(Entrust::can('manage-role'))
-                        <li id="role"><a href="/role"><i class="fa fa-user fa-fw"></i> {{trans('messages.user').' '.trans('messages.role') }}</a></li>
+                        <li id="role"><a href="{{url('role')}}"><i class="fa fa-user fa-fw"></i> {{trans('messages.user').' '.trans('messages.role') }}</a></li>
                     @endif
                     @if(Entrust::can('manage-permission'))
-                        <li id="permission"><a href="/permission"><i class="fa fa-lock fa-fw"></i> {{trans('messages.permission') }}</a></li>
+                        <li id="permission"><a href="{{url('permission')}}"><i class="fa fa-lock fa-fw"></i> {{trans('messages.permission') }}</a></li>
                     @endif
                 </ul>
             </li>
             @endif
             @if(Entrust::can('manage-custom-field') && config('config.enable_custom_field'))
-                <li id="custom-field"><a href="/custom-field"><i class="fa fa-wrench fa-fw"></i>  <span class="nav-label">{{trans('messages.custom').' '.trans('messages.field') }}</span></a></li>
+                <li id="custom-field"><a href="{{url('custom-field')}}"><i class="fa fa-wrench fa-fw"></i>  <span class="nav-label">{{trans('messages.custom').' '.trans('messages.field') }}</span></a></li>
             @endif
             @if(Entrust::can('manage-language') && config('config.multilingual'))
-                <li id="language"><a href="/language"><i class="fa fa-globe fa-fw"></i> <span class="nav-label">{{trans('messages.language') }}</span></a></li>
+                <li id="language"><a href="{{url('language')}}"><i class="fa fa-globe fa-fw"></i> <span class="nav-label">{{trans('messages.language') }}</span></a></li>
             @endif
             @if(Entrust::can('manage-template') && config('config.enable_email_template'))
-                <li id="template"><a href="/template"><i class="fa fa-envelope fa-fw"></i>  <span class="nav-label">{{trans('messages.email').' '.trans('messages.template') }}</span></a></li>
+                <li id="template"><a href="{{url('template')}}"><i class="fa fa-envelope fa-fw"></i>  <span class="nav-label">{{trans('messages.email').' '.trans('messages.template') }}</span></a></li>
             @endif
             @if(config('config.enable_activity_log'))
-            <li id="activity-log"><a href="/activity-log"><i class="fa fa-bars fa-fw"></i>  <span class="nav-label">{{trans('messages.activity').' '.trans('messages.log') }}</span></a></li>
+            <li id="activity-log"><a href="{{url('activity-log')}}"><i class="fa fa-bars fa-fw"></i>  <span class="nav-label">{{trans('messages.activity').' '.trans('messages.log') }}</span></a></li>
             @endif
             @if(Entrust::can('manage-message') && config('config.enable_message'))
-            <li id="message"><a href="/message"><i class="fa fa-paper-plane fa-fw"></i>  <span class="nav-label">{{trans('messages.message') }}</span></a></li>
+            <li id="message"><a href="{{url('message')}}"><i class="fa fa-paper-plane fa-fw"></i>  <span class="nav-label">{{trans('messages.message') }}</span></a></li>
             @endif
             @if(Entrust::can('manage-ip-filter') && config('config.enable_ip_filter'))
-                <li id="ip-filter"><a href="/ip-filter"><i class="fa fa-ellipsis-v fa-fw"></i>  <span class="nav-label">IP {{trans('messages.filter') }}</span></a></li>
+                <li id="ip-filter"><a href="{{url('ip-filter')}}"><i class="fa fa-ellipsis-v fa-fw"></i>  <span class="nav-label">IP {{trans('messages.filter') }}</span></a></li>
             @endif
 
         </ul>
