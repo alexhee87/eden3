@@ -386,9 +386,9 @@ function getAvatar($id, $size = 60){
     $name = $user->full_name;
     $tooltip = $name;
     if(isset($profile->avatar))
-        return '<img src="/'.config('constant.upload_path.avatar').$profile->avatar.'" class="img-circle" style="width:'.$size.'px";" alt="User avatar" data-toggle="tooltip" title="'.$tooltip.'">';
+        return '<img src="'.url(config('constant.upload_path.avatar').$profile->avatar).'" class="img-circle" style="width:'.$size.'px";" alt="User avatar" data-toggle="tooltip" title="'.$tooltip.'">';
     else
-        return '<img src="" class="img-circle" style="width:'.$size.'px";" alt="User avatar" data-toggle="tooltip" title="'.$tooltip.'">';}
+        return '<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Image=150&h=150" class="img-circle" style="width:'.$size.'px";" alt="User avatar" data-toggle="tooltip" title="'.$tooltip.'">';}
 
 function timeAgo($time_ago){
     $time_ago = strtotime($time_ago);
