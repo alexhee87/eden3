@@ -1,7 +1,7 @@
 		  <div class="form-group">
 		    <?php echo Form::label('category',trans('messages.category'),['class' => 'control-label']); ?>
 
-		    <?php echo Form::select('category', $category, '',['class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;']); ?>
+		    <?php echo Form::select('category', $category, '',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;']); ?>
 
 		  </div>
 		  <div class="form-group">

@@ -86,7 +86,7 @@
                     		<div class="panel-body">
                     			{!! Form::open(['files'=>'true','route' => 'message.store','role' => 'form', 'class'=>'compose-form','id' => 'compose-form','data-submit' => 'noAjax']) !!}
 									<div class="form-group">
-										{!! Form::select('to_user_id', $users, '',['class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+										{!! Form::select('to_user_id', $users, '',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
 									</div>
 									<div class="form-group">
 										{!! Form::input('text','subject','',['class'=>'form-control','placeholder'=>trans('messages.subject')])!!}

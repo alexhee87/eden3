@@ -3,7 +3,7 @@
 	<?php $__env->startSection('breadcrumb'); ?>
         <div class="row">
 			<ul class="breadcrumb">
-			    <li><a href="/home"><?php echo trans('messages.home'); ?></a></li>
+			    <li><a href="<?php echo e(url('home')); ?>"><?php echo trans('messages.home'); ?></a></li>
 			    <li class="active"><?php echo trans('messages.template'); ?></li>
 			</ul>
 		</div>
@@ -35,7 +35,7 @@
                     	<strong><?php echo trans('messages.list_all'); ?></strong> <?php echo trans('messages.template'); ?>
 
                     	<div class="additional-btn">
-                    		<a href="/email" class="btn btn-sm btn-primary"><?php echo e(trans('messages.email').' '.trans('messages.log')); ?></a>
+                    		<a href="<?php echo e(url('email')); ?>" class="btn btn-sm btn-primary"><?php echo e(trans('messages.email').' '.trans('messages.log')); ?></a>
 							<a href="#" data-toggle="collapse" data-target="#box-detail"><button class="btn btn-sm btn-primary"><i class="fa fa-plus icon"></i> <?php echo trans('messages.add_new'); ?></button></a>
 						</div>
                     </div>

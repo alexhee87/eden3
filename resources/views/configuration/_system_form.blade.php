@@ -5,18 +5,18 @@
     </div>
     <div class="form-group">
         {!! Form::label('timezone_id',trans('messages.timezone'),[])!!}
-        {!! Form::select('timezone_id', [null=>trans('messages.select_one')] + config('timezone'),(config('config.timezone_id')) ? : '',['class'=>'form-control select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+        {!! Form::select('timezone_id', [null=>trans('messages.select_one')] + config('timezone'),(config('config.timezone_id')) ? : '',['class'=>'form-control tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
     </div>
     <div class="form-group">
         {!! Form::label('default_language',trans('messages.default').' '.trans('messages.language'),[])!!}
-        {!! Form::select('default_language', $languages,(config('config.default_language')) ? : '',['class'=>'form-control select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+        {!! Form::select('default_language', $languages,(config('config.default_language')) ? : '',['class'=>'form-control tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
     </div>
     <div class="form-group">
         {!! Form::label('direction',trans('messages.direction'),[])!!}
         {!! Form::select('direction', [
         'ltr' => trans('messages.ltr'),
         'rtl' => trans('messages.rtl'),
-        ],(config('config.direction')) ? : 'ltr',['class'=>'form-control select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+        ],(config('config.direction')) ? : 'ltr',['class'=>'form-control tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
     </div>
     <div class="form-group">
         {!! Form::label('date_format','Date Format',[])!!}
@@ -25,7 +25,7 @@
         'm-d-Y' => date('m-d-Y'),
         'M-d-Y' => date('M-d-Y'),
         'd-M-Y' => date('d-M-Y'),
-        ],(config('config.date_format')) ? : 'd-m-Y',['class'=>'form-control select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+        ],(config('config.date_format')) ? : 'd-m-Y',['class'=>'form-control tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
     </div>
     <div class="form-group">
         {!! Form::label('time_format','Time Format',['class' => 'control-label '])!!}
@@ -46,7 +46,7 @@
         'toast-top-left' => trans('messages.top_left'),
         'toast-bottom-right' => trans('messages.bottom_right'),
         'toast-bottom-left' => trans('messages.bottom_left')
-        ],(config('config.notification_position')) ? : '',['class'=>'form-control select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+        ],(config('config.notification_position')) ? : '',['class'=>'form-control tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
     </div>
     <div class="row">
         <div class="col-md-6">

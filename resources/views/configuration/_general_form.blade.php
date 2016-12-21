@@ -35,7 +35,7 @@
 						</div>
 					</div>
 					<br />
-					{!! Form::select('country_id', config('country'),(config('config.country_id')) ? : '',['class'=>'form-control select2me','placeholder'=>trans('messages.country')])!!}
+					{!! Form::select('country_id', config('country'),(config('config.country_id')) ? : '',['class'=>'form-control tagsinput','placeholder'=>trans('messages.country')])!!}
 				</div>
 			  	{!! Form::submit(isset($buttonText) ? $buttonText : trans('messages.save'),['class' => 'btn btn-primary pull-right']) !!}
 			</div>

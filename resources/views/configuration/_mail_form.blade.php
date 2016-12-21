@@ -9,7 +9,7 @@
 					'mailgun' => 'mailgun',
 					'mandrill' => 'mandrill',
 					'log' => 'log'
-					],(config('mail.driver')) ? : '',['id' => 'mail_driver', 'class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+					],(config('mail.driver')) ? : '',['id' => 'mail_driver', 'class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
 			  </div>
 			  <div class="form-group">
 			    {!! Form::label('from_address','From Address',[])!!}
@@ -43,7 +43,7 @@
 				  <div class="form-group">
 				    {!! Form::label('encryption','Encryption',[])!!}
 					{!! Form::select('encryption', ['ssl'=>'SSL',
-					'tls' => 'TLS'],(config('config.encryption')) ? : 'tls',['class'=>'form-control select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+					'tls' => 'TLS'],(config('config.encryption')) ? : 'tls',['class'=>'form-control tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
 				  </div>
 				</div>
 				<div id="mandrill_configuration" class="mail_config">

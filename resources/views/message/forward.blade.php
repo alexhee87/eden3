@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 				{!! Form::model($message,['files'=>'true','method' => 'POST','route' => ['message.post-forward',$message->token] ,'class' => 'forward-form','id' => 'forward-form']) !!}
 					<div class="form-group">
-						{!! Form::select('to_user_id', $users, '',['class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
+						{!! Form::select('to_user_id', $users, '',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;'])!!}
 					</div>
 					<div class="form-group">
 						{!! Form::input('text','subject','Fw: '.$message->subject,['class'=>'form-control','placeholder'=>trans('messages.subject')])!!}

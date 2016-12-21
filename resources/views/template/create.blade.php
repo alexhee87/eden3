@@ -7,7 +7,7 @@
 		{!! Form::open(['route' => 'template.store','role' => 'form', 'class'=>'template-form','id' => 'template-form','data-submit' => 'noAjax']) !!}
 		  <div class="form-group">
 		    {!! Form::label('category',trans('messages.category'),['class' => 'control-label'])!!}
-		    {!! Form::select('category', ['' => trans('messages.select_one')] + $category, '',['class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one')])!!}
+		    {!! Form::select('category', ['' => trans('messages.select_one')] + $category, '',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')])!!}
 		  </div>
 		  <div class="form-group">
 		    {!! Form::label('subject',trans('messages.subject'),[])!!}

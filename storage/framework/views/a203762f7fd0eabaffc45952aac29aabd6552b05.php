@@ -1,9 +1,7 @@
-
-
 	<?php $__env->startSection('breadcrumb'); ?>
 		<div class="row">
 			<ul class="breadcrumb">
-			    <li><a href="/home"><?php echo trans('messages.home'); ?></a></li>
+			    <li><a href="<?php echo e(url('home')); ?>"><?php echo trans('messages.home'); ?></a></li>
 			    <li class="active">Message</li>
 			</ul>
 		</div>
@@ -87,7 +85,7 @@
                     			<?php echo Form::open(['files'=>'true','route' => 'message.store','role' => 'form', 'class'=>'compose-form','id' => 'compose-form','data-submit' => 'noAjax']); ?>
 
 									<div class="form-group">
-										<?php echo Form::select('to_user_id', $users, '',['class'=>'form-control input-xlarge select2me','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;']); ?>
+										<?php echo Form::select('to_user_id', $users, '',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one'),'style' => 'width:100%;']); ?>
 
 									</div>
 									<div class="form-group">
