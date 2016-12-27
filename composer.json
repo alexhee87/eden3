@@ -15,8 +15,8 @@
         "laravel/socialite": "^2.0",
         "laravel/passport": "^1.0",
         "intervention/image": "^2.3",
-        "nexmo/laravel": "dev-master as 1.0",
-        "nexmo/client": "dev-master as 1.0",
+        "nexmo/laravel": "1.0.0-beta3",
+        "nexmo/client": "@beta",
         "pusher/pusher-php-server": "^2.6",
         "vinkla/pusher": "^2.4"
     },
