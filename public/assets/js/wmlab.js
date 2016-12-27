@@ -413,7 +413,7 @@ $(document).ready(function(){
       });
     }
 
-    var pusher = new Pusher('117a444d6b4939533e93', {
+    var pusher = new Pusher(pusherID, {
       cluster: 'ap1',
       encrypted: true
     });
