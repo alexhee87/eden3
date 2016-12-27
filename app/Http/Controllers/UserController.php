@@ -260,11 +260,11 @@ class UserController extends Controller
     }
 
     public function profileUpdate(Request $request, $id){
+
+        $user = \App\User::find($id);
         
         if(!Entrust::can('update-user') || (!Entrust::hasRole(DEFAULT_ROLE) && $user->hasRole(DEFAULT_ROLE)) )
             return redirect('/home')->withErrors(trans('messages.permission_denied'));
-
-        $user = \App\User::find($id);
 
         if(!$user)
             return redirect('/user')->withErrors(trans('messages.invalid_link'));
@@ -275,6 +275,11 @@ class UserController extends Controller
 
         $profile->date_of_birth = ($request->input('date_of_birth')) ? : null;
         $profile->save();
+
+        if($request->has('username')){
+            $user->username = $request->input('username');
+            $user->save();
+        }
 
         if($request->has('role_id') && !$user->hasRole(DEFAULT_ROLE)){
             $user->roles()->sync($request->input('role_id'));
