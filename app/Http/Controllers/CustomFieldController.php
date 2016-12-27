@@ -47,7 +47,7 @@ Class CustomFieldController extends Controller{
 				($custom_field->is_required) ? '<i class="fa fa-check"></i>' : '<i class="fa fa-times"></i>'
 				);
 		}
-        $list['aaData'] = $rows;
+        $list['aaData'] = count($rows) ? $rows : array();
         return json_encode($list);
 	}
 
