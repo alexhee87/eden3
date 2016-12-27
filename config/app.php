@@ -184,7 +184,8 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Nexmo\Laravel\NexmoServiceProvider::class
+        Nexmo\Laravel\NexmoServiceProvider::class,
+        Vinkla\Pusher\PusherServiceProvider::class
     ],
 
     /*

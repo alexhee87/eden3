@@ -3,8 +3,8 @@
 	<?php $__env->startSection('breadcrumb'); ?>
         <div class="row">
             <ul class="breadcrumb">
-			    <li><a href="/home"><?php echo trans('messages.home'); ?></a></li>
-                <li><a href="/user"><?php echo trans('messages.user'); ?></a></li>
+			    <li><a href="<?php echo e(url('home')); ?>"><?php echo trans('messages.home'); ?></a></li>
+                <li><a href="<?php echo e(url('user')); ?>"><?php echo trans('messages.user'); ?></a></li>
 			    <li class="active"><?php echo $user->full_name; ?></li>
 			</ul>
         </div>
@@ -64,7 +64,7 @@
                             </table>
                             <div class="row" style="padding:10px;">
                                 <div class="col-md-6">
-                                    <a href="#" data-href="/change-password" class="btn btn-block btn-primary"><?php echo e(trans('messages.change').' '.trans('messages.password')); ?></a>
+                                    <a href="#" data-href="<?php echo e(url('change-password')); ?>" class="btn btn-block btn-primary"><?php echo e(trans('messages.change').' '.trans('messages.password')); ?></a>
                                 </div>
                                 <div class="col-md-6">
                                     <a href="#" onclick="event.preventDefault();

@@ -384,14 +384,14 @@ $(document).ready(function(){
 
     function fetchChatMessages(){
       $.ajax({
-         url: '/fetch-chat',
+         url: appPath+'/fetch-chat',
          error: function(data) {
          },
          dataType: 'html',
          success: function(data) {
             $('#chat-messages').html(data);
             $('#chat-messages .textAvatar').nameBadge();
-            $('#chat-box').animate({scrollTop:$('.chat-panel').height()}, 'fast');
+            $('#chat-box').animate({scrollTop:$('div#chat-messages').prop("scrollHeight")}, 'fast');
          },
          type: 'POST'
       });
@@ -400,7 +400,7 @@ $(document).ready(function(){
     function loadMessage(){
       var postData = 'token=' + $('#load-message').attr('data-token');
       $.ajax({
-         url: '/load-message',
+         url: appPath+'/load-message',
          error: function(data) {
          },
          data: postData,
@@ -413,20 +413,51 @@ $(document).ready(function(){
       });
     }
 
+    var pusher = new Pusher('117a444d6b4939533e93', {
+      cluster: 'ap1',
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('eden-chat');
+    channel.bind('message-sent-event', function(data) {
+        var d = $.Deferred(),
+        p=d.then(function(){
+            $('ul.chat').append(data.message);
+        });
+
+        d.resolve();
+
+        p.done(function(){
+            $('#chat-box').animate({scrollTop: $('div#chat-messages').prop("scrollHeight")}, 'fast');
+            var finalList = $('ul.chat').children().last();
+            var img = $('ul.chat').children().last().children()[0];
+            if (finalList.hasClass('user-' + currentUserId)) {
+                    //$(el).removeClass('');
+                } else {
+                    finalList.removeClass('right');
+                    finalList.addClass('left');
+                    $(img).removeClass('pull-right');
+                    $(img).addClass('pull-left');
+                }
+        });
+    });
+
     if($('#chat-messages').length){
       fetchChatMessages();
       if($('#chat-messages').attr('data-chat-refresh') > 0){
+          fetchChatMessages();
+          /*
         setInterval(function() {
           fetchChatMessages();
-        }, $('#chat-messages').attr('data-chat-refresh-duration')*1000);
+        }, $('#chat-messages').attr('data-chat-refresh-duration')*1000);*/
       }
     }
-    
+
     function refreshContent(field){
-      if(field == 'chat-messages')
-        fetchChatMessages();
-      else if(field == 'load-message')
-        loadMessage();
+      //if(field == 'chat-messages') {
+      //    fetchChatMessages();
+      //}else if(field == 'load-message')
+      //  loadMessage();
     }
 
     if($('#load-message').length)

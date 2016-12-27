@@ -71,16 +71,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <?php echo e(trans('messages.calendar')); ?>
 
-                    </div>
-                    <div class="panel-body">
-                        <div id="render_calendar">
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="col-md-4">
                 <?php if(config('config.enable_group_chat')): ?>

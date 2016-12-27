@@ -15,7 +15,7 @@
 				<div class="tabs-left">
 					<ul class="nav nav-tabs">
 					  <li><a href="#compose-tab" data-toggle="tab"><i class="fa fa-pencil-square"></i> Compose</a></li>
-					  <li class="active"><a href="#inbox-tab" data-toggle="tab"><i class="fa fa-inbox"></i> Inbox ({{$count_inbox}})</a></li>
+					  <li class="active"><a href="#inbox-tab" data-toggle="tab"><i class="fa fa-inbox"></i> Inbox <span class="label label-warning pull-right">{{$count_inbox}}</span></a></li>
 					  <li><a href="#sent-tab" data-toggle="tab"><i class="fa fa-share"></i> Sent</a></li>
 					  <li><a href="#starred-tab" data-toggle="tab"><i class="fa fa-star"></i> Starred</a></li>
 					  <li><a href="#trash-tab" data-toggle="tab"><i class="fa fa-trash"></i> Trash</a></li>

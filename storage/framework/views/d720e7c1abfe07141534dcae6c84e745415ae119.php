@@ -94,7 +94,11 @@
     $.ajaxSetup({
        headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
     });
+
+        var appPath = "<?php echo e(env('SUBFOLDER_PATH','')); ?>";
+        var currentUserId = "<?php echo e(Auth::user()->id); ?>";
     </script>
+    <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
     <?php echo Html::script('assets/js/wmlab.js'); ?>
 
     <?php echo $__env->yieldContent('javascript'); ?>

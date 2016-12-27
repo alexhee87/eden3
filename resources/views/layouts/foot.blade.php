@@ -73,7 +73,11 @@
     $.ajaxSetup({
        headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
     });
+
+        var appPath = "{{env('SUBFOLDER_PATH','')}}";
+        var currentUserId = "{{Auth::user()->id}}";
     </script>
+    <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
     {!! Html::script('assets/js/wmlab.js') !!}
     @yield('javascript')
 
