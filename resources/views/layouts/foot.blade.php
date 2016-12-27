@@ -76,7 +76,7 @@
 
         var appPath = "{{env('SUBFOLDER_PATH','')}}";
         var currentUserId = "{{Auth::user()->id}}";
-        var pusherID = env('PUSHER_KEY');
+        var pusherID = "{{env('PUSHER_KEY')}}";
     </script>
     <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
     {!! Html::script('assets/js/wmlab.js') !!}
