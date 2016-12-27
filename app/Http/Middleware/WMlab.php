@@ -21,8 +21,10 @@ class WMLab
         view()->share(compact('assets'));
         setEncryptionKey();
 
-        if(!checkDBConnection() && !$request->is('install') && !$request->is('update'))
+        if(!checkDBConnection() && !$request->is('install') && !$request->is('update')){
             return redirect('/install');
+        }
+
 
         foreach(config('constant.path') as $key => $path)
             if (!File::exists(base_path().$path) && $key != 'verifier')
