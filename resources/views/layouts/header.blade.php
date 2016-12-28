@@ -52,7 +52,7 @@
                 </ul>
             </li>
             <li>
-                <a href="login.html">
+                <a href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                     <i class="fa fa-sign-out"></i> Log out
                 </a>
             </li>
