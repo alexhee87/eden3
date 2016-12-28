@@ -61,7 +61,7 @@
                                         <img src="{{ URL::to(config('constant.upload_path.logo').config('config.logo')) }}" width="150px" style="margin-left:20px;">
                                         <div class="checkbox">
                                             <label>
-                                              <input name="remove_logo" type="checkbox" class="switch-input" data-size="mini" data-on-text="Yes" data-off-text="No" value="1" data-off-value="0"> {!! trans('messages.remove').' '.trans('messages.logo') !!}
+                                              <input name="remove_logo" type="checkbox" class="switch-input-bak" data-size="mini" data-on-text="Yes" data-off-text="No" value="1" data-off-value="0"> {!! trans('messages.remove').' '.trans('messages.logo') !!}
                                             </label>
                                         </div>
                                     </div>

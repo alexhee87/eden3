@@ -209,7 +209,7 @@ document.getElementById('logout-form').submit();" class="btn btn-block btn-dange
 
                                         <div class="checkbox">
                                             <label>
-                                                <input name="remove_avatar" type="checkbox" class="switch-input"
+                                                <input name="remove_avatar" type="checkbox" class="switch-input-bak"
                                                        data-size="mini" data-on-text="Yes" data-off-text="No" value="1"
                                                        data-off-value="0"> {!! trans('messages.remove').' '.trans('messages.avatar') !!}
                                             </label>

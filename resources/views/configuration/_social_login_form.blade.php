@@ -3,7 +3,7 @@
 			<div class="form-group">
 				{!! Form::label('enable_oauth',trans('messages.enable').' oAuth',['class' => 'control-label '])!!}
 				<div class="checkbox">
-					<input name="enable_oauth" type="checkbox" class="switch-input" data-size="mini" data-on-text="Yes" data-off-text="No" value="1" {{ (config('config.enable_oauth') == 1) ? 'checked' : '' }} data-off-value="0">
+					<input name="enable_oauth" type="checkbox" class="switch-input-bak" data-size="mini" data-on-text="Yes" data-off-text="No" value="1" {{ (config('config.enable_oauth') == 1) ? 'checked' : '' }} data-off-value="0">
 				</div>
 			</div>
 			<div class="form-group">

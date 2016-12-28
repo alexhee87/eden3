@@ -32,12 +32,12 @@
                                 {{ getCustomFields('user-registration-form') }}
                                 @if(Auth::check())
                                 <div class="form-group">
-                                    <input name="send_welcome_email" type="checkbox" class="switch-input" data-size="mini" data-on-text="Yes" data-off-text="No" value="1"> {{trans('messages.send')}} welcome email
+                                    <input name="send_welcome_email" type="checkbox" class="switch-input-bak" data-size="mini" data-on-text="Yes" data-off-text="No" value="1"> {{trans('messages.send')}} welcome email
                                 </div>
                                 @endif
                                 @if(config('config.enable_tnc'))
                                 <div class="form-group">
-                                    <input name="tnc" type="checkbox" class="switch-input" data-size="mini" data-on-text="Yes" data-off-text="No" value="1"> I accept <a href="/terms-and-conditions">Terms & Conditions</a>.
+                                    <input name="tnc" type="checkbox" class="switch-input-bak" data-size="mini" data-on-text="Yes" data-off-text="No" value="1"> I accept <a href="<?php echo url('/terms-and-conditions') ?>s">Terms & Conditions</a>.
                                 </div>
                                 @endif
                                 @if(config('config.enable_recaptcha') && !Auth::check())

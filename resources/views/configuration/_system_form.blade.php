@@ -30,7 +30,7 @@
     <div class="form-group">
         {!! Form::label('time_format','Time Format',['class' => 'control-label '])!!}
         <div class="checkbox">
-            <input name="time_format" type="checkbox" class="switch-input" data-size="mini" data-on-text="12 Hours" data-off-text="24 Hours" value="1" {{ (config('config.time_format') == 1) ? 'checked' : '' }} data-off-value="0">
+            <input name="time_format" type="checkbox" class="switch-input-bak" data-size="mini" data-on-text="12 Hours" data-off-text="24 Hours" value="1" {{ (config('config.time_format') == 1) ? 'checked' : '' }} data-off-value="0">
         </div>
     </div>
     <div class="form-group">

@@ -17,7 +17,7 @@
                         <strong>{!!trans('messages.list_all').'</strong> '.trans('messages.backup')!!}
                         <div class="additional-btn">
                         	{!! Form::open(['route' => 'backup.store','role' => 'form', 'class'=>'backup-form','id' => 'backup-form']) !!}
-								<span style="font-size:12px;">{{trans('messages.delete').' '.trans('messages.old')}}</span> <input name="delete_old_backup" type="checkbox" class="switch-input" data-size="mini" data-on-text="Yes" data-off-text="No" value="1"> 
+								<span style="font-size:12px;">{{trans('messages.delete').' '.trans('messages.old')}}</span> <input name="delete_old_backup" type="checkbox" class="switch-input-bak" data-size="mini" data-on-text="Yes" data-off-text="No" value="1">
 								{!! Form::submit(trans('messages.generate').' '.trans('messages.backup'),['class' => 'btn btn-primary btn-sm']) !!}
 							{!! Form::close() !!}
                         </div>

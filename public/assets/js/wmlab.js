@@ -224,7 +224,7 @@ $(document).ready(function(){
     $('.password-strength').pwstrength();
     $('.select2me').select2({theme: "bootstrap",allowClear: true});
     initDatepicker('.datepicker');
-    initIcheck('.icheck');
+    //initIcheck('.');
     if($('.summernote').length)
     $('.summernote').summernote({ height: 100 });
     if($('.fileinput').length)
