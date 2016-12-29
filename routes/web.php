@@ -146,6 +146,20 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 		Route::post('/activity-log/lists','HomeController@activityLogList');
 	});
 
+	/*----------
+	| Entities routing
+	*/
+
+	//Country
+    Route::model('country','\App\Country');
+    Route::post('country/lists', 'CountryController@lists');
+    Route::resources('country', 'CountryController');
+
+	//Company
+	Route::model('company','\App\Company');
+	Route::post('/company/lists','CompanyController@lists');
+	Route::resource('company', 'CompanyController');
+
 
 	Route::model('user','\App\User');
 	Route::post('/user/lists','UserController@lists');

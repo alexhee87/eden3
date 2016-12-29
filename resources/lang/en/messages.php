@@ -228,5 +228,9 @@ return array (
     'trashed' => 'trashed.',
     'restored' => 'restored.',
     'users_management' => 'Users Management',
-    'permission_edit_roles' => 'Assign Role to Permissions'
+    'permission_edit_roles' => 'Assign Role to Permissions',
+    'manage_entities' => 'Manage Entities',
+    'company'=>'Company',
+    'location'=>'Location',
+    'department'=>'Department'
 );

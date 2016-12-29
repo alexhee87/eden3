@@ -64,6 +64,18 @@
                 <li id="ip-filter"><a href="{{url('ip-filter')}}"><i class="fa fa-ellipsis-v fa-fw"></i>  <span class="nav-label">IP {{trans('messages.filter') }}</span></a></li>
             @endif
 
+            <!-- Manage Entities -->
+            @if(true || Entrust::can('manage-entities'))
+                <li class="manage-entities">
+                    <a href="#"><i class="fa fa-ellipsis-v fa-codepen"></i>  <span class="nav-label">IP {{trans('messages.manage_entities') }}</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li id="company"><a href="{{url('company')}}"><i class="fa fa-users fa-fw"></i> {{trans('messages.company') }}</a></li>
+                        <li id="location"><a href="{{url('location')}}"><i class="fa fa-user fa-fw"></i> {{trans('messages.location') }}</a></li>
+                        <li id="department"><a href="{{url('department')}}"><i class="fa fa-lock fa-fw"></i> {{trans('messages.department') }}</a></li>
+                    </ul>
+                </li>
+            @endif
+
         </ul>
 
     </div>
