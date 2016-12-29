@@ -64,7 +64,7 @@
 
     @if(in_array('calendar',$assets))
         {!! Html::script('assets/vendor/calendar/moment.min.js') !!}
-        {!! Html::script('assets/vendor/calendar/fullcalendar.min.js') !!}
+        {!! Html::script('assets/custom/js/plugins/fullcalendar/fullcalendar.min.js') !!}
     @endif
     @if(in_array('recaptcha',$assets))
         <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -73,6 +73,8 @@
     $.ajaxSetup({
        headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
     });
+
+        var calendar_events = {!! (isset($events)) ? json_encode($events) : '""' !!};
 
         var appPath = "{{env('SUBFOLDER_PATH','')}}";
         var currentUserId = "{{Auth::user()->id}}";

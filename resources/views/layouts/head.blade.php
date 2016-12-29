@@ -26,4 +26,6 @@
     {!! Html::style('assets/custom/css/plugins/chosen/bootstrap-chosen.css') !!}
     <!-- Sweet Alert -->
     {!! Html::style('assets/custom/css/plugins/sweetalert/sweetalert.css') !!}
+
+    {!! Html::style('assets/custom/css/plugins/fullcalendar/fullcalendar.css') !!}
 </head>
