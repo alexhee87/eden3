@@ -16,7 +16,7 @@
             @endif
 
             @if(Entrust::can('manage-todo') && config('config.enable_to_do'))
-            <li><a href="#" data-href="/todo" data-toggle="modal" data-target="#myModal">
+            <li><a href="#" data-href="{{url('/todo')}}" data-toggle="modal" data-target="#myModal">
             <i class="fa fa-list-ul fa-lg icon" data-toggle="tooltip" data-placement="left" title="{!! trans('messages.to_do') !!}" data-placement="bottom"></i></a></li>
             @endif
 

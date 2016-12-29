@@ -129,7 +129,7 @@
                 <div class="switch">
 					<div class="onoffswitch">
 						<input name="enable_to_do" id="enable_to_do" {{ (config('config.enable_to_do') == '1') ? 'checked' : '' }} type="checkbox" class="onoffswitch-checkbox" value="1" data-off-value="0">
-						<label class="onoffswitch-label" for="enable_user_registration">
+						<label class="onoffswitch-label" for="enable_to_do">
 							<span class="onoffswitch-inner"></span>
 							<span class="onoffswitch-switch"></span>
 						</label>
