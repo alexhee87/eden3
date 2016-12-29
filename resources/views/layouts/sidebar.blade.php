@@ -66,14 +66,15 @@
 
             <!-- Manage Entities -->
             @if(true || Entrust::can('manage-entities'))
-                <li class="manage-entities">
-                    <a href="#"><i class="fa fa-ellipsis-v fa-codepen"></i>  <span class="nav-label">IP {{trans('messages.manage_entities') }}</span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li id="company"><a href="{{url('company')}}"><i class="fa fa-users fa-fw"></i> {{trans('messages.company') }}</a></li>
-                        <li id="location"><a href="{{url('location')}}"><i class="fa fa-user fa-fw"></i> {{trans('messages.location') }}</a></li>
-                        <li id="department"><a href="{{url('department')}}"><i class="fa fa-lock fa-fw"></i> {{trans('messages.department') }}</a></li>
-                    </ul>
-                </li>
+            <li class="manage-entities department company location country">
+                <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">{{trans('messages.manage_entities') }}</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li id="country"><a href="{{url('country')}}"><i class="fa fa-flag fa-fw"></i> {{trans('messages.country') }}</a></li>
+                    <li id="company"><a href="{{url('company')}}"><i class="fa fa-building-o fa-fw"></i> {{trans('messages.company') }}</a></li>
+                    <li id="location"><a href="{{url('location')}}"><i class="fa fa-road fa-fw"></i> {{trans('messages.location') }}</a></li>
+                    <li id="department"><a href="{{url('department')}}"><i class="fa fa-suitcase fa-fw"></i> {{trans('messages.department') }}</a></li>
+                </ul>
+            </li>
             @endif
 
         </ul>

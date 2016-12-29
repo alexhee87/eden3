@@ -230,7 +230,9 @@ return array (
     'users_management' => 'Users Management',
     'permission_edit_roles' => 'Assign Role to Permissions',
     'manage_entities' => 'Manage Entities',
-    'company'=>'Company',
-    'location'=>'Location',
-    'department'=>'Department'
+    'company' =>'Company',
+    'location' => 'Location',
+    'department' => 'Department',
+    'country_name' => 'Country Name',
+    'country_iso' => 'Country ISO',
 );

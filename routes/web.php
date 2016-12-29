@@ -152,8 +152,9 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 
 	//Country
     Route::model('country','\App\Country');
-    Route::post('country/lists', 'CountryController@lists');
-    Route::resources('country', 'CountryController');
+    Route::post('/country/lists', 'CountryController@lists');
+    Route::resource('country', 'CountryController');
+    Route::post('/country',array('as' => 'country.store','uses' => 'CountryController@create'));
 
 	//Company
 	Route::model('company','\App\Company');
