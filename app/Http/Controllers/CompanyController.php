@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Company;
 use App\Country;
 use Illuminate\Http\Request;
+use App\Http\Requests\CompanyRequest;
+use App\Permission;
 use App\Classes\Helper;
 use Entrust;
 use Lang;
@@ -49,7 +51,12 @@ class CompanyController extends Controller
 
 		foreach($companies as $company){
 			$rows[] = array(
-				delete_form(['company.destroy',$company->id],array('company')),
+                '<div class="btn-group btn-group-xs center-block">'
+                .'<a href="#" data-href="'.url('/company/'.$company->id).'/edit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal"> <i class="fa fa-edit" data-toggle="tooltip" title="'.trans('messages.edit').'"></i></a>'
+                .'<a href="#" data-href="'.url('/company/'.$company->id).'/delete" class="btn btn-xs btn-danger btn-default" onclick="popDeleteMessage(this)"> <i class="fa fa-trash-o" data-toggle="tooltip" title="'.trans('permission.destroy').'"></i></a>'
+                .'<span style="display: none">'.delete_form(['company.destroy',$company->id]).'</span>'
+                .'</div>'
+                ,
 				$company->name,
 				ucfirst($company->description),
                 $company->getCountryName(),
@@ -65,7 +72,7 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(App\Http\Requests\CompanyRequest $request, Company $company)
+    public function create(CompanyRequest $request, Company $company)
     {
         $data = $request->all();
         $company->fill($data);
@@ -76,11 +83,7 @@ class CompanyController extends Controller
 
 		$this->logActivity(['module' => 'company','unique_id' => $company->id,'activity' => 'activity_added']);
 
-	    if($request->has('ajax_submit')){
-	        $response = ['message' => trans('messages.custom').' '.trans('messages.field').' '.trans('messages.added'), 'status' => 'success'];
-	        return response()->json($response, 200, array('Access-Controll-Allow-Origin' => '*'));
-	    }
-		return redirect()->back()->withSuccess(trans('messages.custom').' '.trans('messages.field').' '.trans('messages.added'));
+        return $this->returnResponse($request, trans('messages.company'), trans('messages.added'));
     }
 
     /**
@@ -111,10 +114,17 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
+    public function edit(Company $company){
+
+        $countries = Country::where('active', 1)->select('id', 'name')->get();
+        $countriesList = array();
+        foreach($countries as $country){
+            $countriesList[$country->id] = $country->name;
+        }
+
+
+		return view('company.edit',compact('company', 'countriesList'));
+	}
 
     /**
      * Update the specified resource in storage.
@@ -123,10 +133,15 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+    public function update(CompanyRequest $request, Company $company){
+        $this->ajaxOnlyResponse($request);
+        $company->fill($request->all());
+		$company->save();
+
+		$this->logActivity(['module' => 'company', 'unique_id' => $company->id, 'activity' => 'activity_updated']);
+
+        return $this->returnResponse($request, trans('messages.company'), trans('messages.updated'));
+	}
 
     /**
      * Remove the specified resource from storage.
@@ -134,8 +149,12 @@ class CompanyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CompanyRequest $request, Company $company)
     {
-        //
+        $this->logActivity(['module' => 'company','unique_id' => $company->id,'activity' => 'activity_deleted']);
+
+        $company->delete();
+
+        return $this->returnResponse($request, trans('messages.company'), trans('messages.deleted'));
     }
 }

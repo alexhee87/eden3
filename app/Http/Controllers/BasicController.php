@@ -20,4 +20,22 @@ trait BasicController {
         $data['from_address'] = config('mail.from.address');
         \App\Email::create($data);
     }
+
+    public function returnResponse(Request $request, $module, $action){
+        if($request->has('ajax_submit')){
+            $response = ['message' => $module.' '.$action, 'status' => 'success'];
+            return response()->json($response, 200, array('Access-Controll-Allow-Origin' => '*'));
+    	}
+		return redirect('/permission')->withSuccess($module.' ',$action);
+    }
+
+    public function ajaxOnlyResponse(Request $request){
+        if($request->is_default){
+        	if($request->has('ajax_submit')){
+        		$response = ['message' => trans('messages.permission_denied'), 'status' => 'error'];
+	        	return response()->json($response, 200, array('Access-Controll-Allow-Origin' => '*'));
+        	}
+            return redirect()->back()->withErrors(trans('messages.permission_denied'));
+		}
+    }
 }

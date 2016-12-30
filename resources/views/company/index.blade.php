@@ -18,26 +18,7 @@
 				</div>
 				<div class="panel-body">
 					{!! Form::open(['route' => 'company.create','role' => 'form', 'class'=>'company-form','id' => 'company-form','data-disable-enter-submission' => '1']) !!}
-
-					<div class="form-group">
-						{!! Form::label('name',trans('messages.name'),[]) !!}
-						{!! Form::input('text','name','',['class'=>'form-control','placeholder'=>trans('messages.name')]) !!}
-					</div>
-					<div class="form-group">
-						{!! Form::label('description',trans('messages.description'),[]) !!}
-						{!! Form::input('textarea','description','',['class'=>'form-control','placeholder'=>trans('messages.description')]) !!}
-					</div>
-					<div class="form-group">
-						{!! Form::label('form',trans('messages.country'),[])!!}
-						{!! Form::select('country_id', $countriesList,'',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')])!!}
-					</div>
-					<div class="custom-field-option">
-						{!! Form::label('options',trans('messages.option'),[]) !!}
-						{!! Form::input('text','options','',['class'=>'tagsinput form-control','placeholder'=>'','size'=>'1','data-role' => 'tagsinput']) !!}
-
-					</div>
-					{!! Form::submit(isset($buttonText) ? $buttonText : trans('messages.save'),['class' => 'btn btn-primary pull-right']) !!}
-
+					@include('company._form')
 					{!! Form::close() !!}
 				</div>
 			</div>

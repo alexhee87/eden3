@@ -158,6 +158,7 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 
 	//Company
 	Route::model('company','\App\Company');
+    Route::patch('/company/update/{id}',array('as' => 'company.update', 'uses' => 'CompanyController@update'));
 	Route::post('/company/lists','CompanyController@lists');
 	Route::resource('company', 'CompanyController');
     Route::post('/company', array('as' => 'company.create','uses' => 'CompanyController@create'));

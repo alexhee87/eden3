@@ -24,10 +24,32 @@ class CompanyRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required|unique:companies,name',
-            'description' => 'sometimes',
-            'country_id' => 'int|required|exists:countries,id'
-        ];
+        $id = $this->get('id');
+        switch($this->method())
+        {
+            case 'GET':
+            case 'DELETE':
+            {
+                return [];
+            }
+            case 'POST':
+            {
+                 return [
+                    'name' => 'required|unique:companies,name',
+                    'description' => 'sometimes',
+                    'country_id' => 'int|required|exists:countries,id'
+                ];
+            }
+            case 'PUT':
+            case 'PATCH':
+            {
+                return [
+                    'name' => 'required',
+                    'description' => 'sometimes',
+                    'country_id' => 'int|required|exists:countries,id'
+                ];
+            }
+            default:break;
+        }
     }
 }
