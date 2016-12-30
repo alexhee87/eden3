@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Company;
+use App\Country;
 use Illuminate\Http\Request;
 use App\Classes\Helper;
 use Entrust;
@@ -39,13 +40,12 @@ class CompanyController extends Controller
     public function lists(Request $request){
         $companies = Company::all();
 
-
 		foreach($companies as $company){
 			$rows[] = array(
 				delete_form(['company.destroy',$company->id],array('company')),
 				$company->name,
 				ucfirst($company->description),
-                $company->country_id,
+                $company->getCountryName(),
                 $company->active
 				);
 		}

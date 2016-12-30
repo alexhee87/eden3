@@ -249,9 +249,26 @@ $(document).ready(function(){
       }
     });
 
+
     $(document).on("click", "[data-submit-confirm-text]", function(e) {
         e.preventDefault();
         var $el = $(this);
+        swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover this imaginary file!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            closeOnConfirm: false
+        }, function () {
+            var formDetails = $el.closest('form');
+            if (formDetails.attr('data-submit') != 'noAjax')
+                ajaxProcess(formDetails);
+            else
+                $(formDetails).submit();
+        });
+        /*
         bootbox.confirm("Are you sure?", function(result) {
           if (result) {
             var formDetails = $el.closest('form');
@@ -260,7 +277,7 @@ $(document).ready(function(){
             else
             $(formDetails).submit();
           }
-        });
+        });*/
     });
 
     function textareaCounter(){
@@ -476,8 +493,6 @@ $(document).ready(function(){
         $('li.'+pathName[i]).children('ul').removeClass('collapse');
         $('li#'+pathName[i]).addClass('active');
     }
-
-
 
     //activate chosen
     $('.chosen-select').chosen({width: "100%"});

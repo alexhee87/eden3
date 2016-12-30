@@ -15,4 +15,14 @@ class Company extends Model
 						];
 	protected $primaryKey = 'id';
 	protected $table = 'companies';
+
+
+	public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
+
+    public function getCountryName(){
+        return $this->Country->name;
+    }
 }

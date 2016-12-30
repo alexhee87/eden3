@@ -23,11 +23,10 @@ class CountryController extends Controller
 			'title' => 'Country List',
 			'id' => 'country_table',
 			'data' => array(
-        		trans('messages.option'),
+                'ID',
         		trans('messages.name'),
-        		trans('messages.country_iso'),
-        		trans('messages.active')
-        		)
+        		trans('messages.country_iso')
+            )
 			);
 
 		return view('country.index',compact('table_data'));
@@ -38,10 +37,9 @@ class CountryController extends Controller
 
 		foreach($countries as $country){
 			$rows[] = array(
-				delete_form(['country.destroy',$country->id],array('country')),
+                $country->id,
 				$country->name,
-				$country->iso_name,
-                $country->active
+				$country->iso_name
 				);
 		}
         $list['aaData'] = (isset($rows) && count($rows)) ? $rows : array();

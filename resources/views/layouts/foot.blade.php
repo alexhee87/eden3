@@ -51,6 +51,8 @@
     <!-- Chosen -->
     {!! Html::script('assets/custom/js/plugins/chosen/chosen.jquery.js') !!}
 
+    {!! Html::script('assets/js/bootbox.js') !!}
+
 
     <script>
         $(document).ready(function () {
