@@ -160,6 +160,7 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 	Route::model('company','\App\Company');
 	Route::post('/company/lists','CompanyController@lists');
 	Route::resource('company', 'CompanyController');
+    Route::post('/company', array('as' => 'company.create','uses' => 'CompanyController@create'));
 
 
 	Route::model('user','\App\User');

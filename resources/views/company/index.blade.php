@@ -14,43 +14,22 @@
 		<div class="col-lg-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<strong>{!! trans('messages.add_new') !!}</strong> {!! trans('messages.custom').' '.trans('messages.field') !!}
+					<strong>{!! trans('messages.add_new') !!}</strong> {!! trans('messages.company') !!}
 				</div>
 				<div class="panel-body">
-					{!! Form::open(['route' => 'custom-field.store','role' => 'form', 'class'=>'custom-field-form','id' => 'custom-field-form','data-disable-enter-submission' => '1']) !!}
+					{!! Form::open(['route' => 'company.create','role' => 'form', 'class'=>'company-form','id' => 'company-form','data-disable-enter-submission' => '1']) !!}
+
 					<div class="form-group">
-						{!! Form::label('form',trans('messages.form'),[])!!}
-						{!! Form::select('form', config('custom_field'),'',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')])!!}
+						{!! Form::label('name',trans('messages.name'),[]) !!}
+						{!! Form::input('text','name','',['class'=>'form-control','placeholder'=>trans('messages.name')]) !!}
 					</div>
 					<div class="form-group">
-						{!! Form::label('title',trans('messages.title'),[]) !!}
-						{!! Form::input('text','title','',['class'=>'form-control','placeholder'=>trans('messages.title')]) !!}
+						{!! Form::label('description',trans('messages.description'),[]) !!}
+						{!! Form::input('textarea','description','',['class'=>'form-control','placeholder'=>trans('messages.description')]) !!}
 					</div>
 					<div class="form-group">
-						Required
-						<div class="switch">
-							<div class="onoffswitch">
-								<input name="is_required" type="checkbox" checked class="onoffswitch-checkbox" id="is_required">
-								<label class="onoffswitch-label" for="is_required">
-									<span class="onoffswitch-inner"></span>
-									<span class="onoffswitch-switch"></span>
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						{!! Form::label('type',trans('messages.type'),[])!!}
-						{!! Form::select('type', [
-                        'text' => 'Text Box',
-                        'number' => 'Number',
-                        'email' => 'Email',
-                        'url' => 'URL',
-                        'date' => 'Date',
-                        'select' => 'Select Box',
-                        'radio' => 'Radio Button',
-                        'checkbox' => 'Check Box',
-                        'textarea' => 'Textarea'
-                        ],'',['id' => 'type', 'class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')])!!}
+						{!! Form::label('form',trans('messages.country'),[])!!}
+						{!! Form::select('country_id', $countriesList,'',['class'=>'form-control input-xlarge tagsinput','placeholder'=>trans('messages.select_one')])!!}
 					</div>
 					<div class="custom-field-option">
 						{!! Form::label('options',trans('messages.option'),[]) !!}

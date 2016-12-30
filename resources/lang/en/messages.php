@@ -235,4 +235,5 @@ return array (
     'department' => 'Department',
     'country_name' => 'Country Name',
     'country_iso' => 'Country ISO',
+    'country' => 'Country'
 );

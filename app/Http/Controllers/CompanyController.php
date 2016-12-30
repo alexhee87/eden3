@@ -14,6 +14,7 @@ use App;
 
 class CompanyController extends Controller
 {
+    use BasicController;
     /**
      * Display a listing of the resource.
      *
@@ -29,12 +30,18 @@ class CompanyController extends Controller
         		trans('messages.option'),
         		trans('messages.name'),
         		trans('messages.description'),
-                trans('message.country'),
+                trans('messages.country'),
         		trans('messages.active')
         		)
 			);
 
-		return view('company.index',compact('table_data'));
+        $countries = Country::where('active', 1)->select('id', 'name')->get();
+        $countriesList = array();
+        foreach($countries as $country){
+            $countriesList[$country->id] = $country->name;
+        }
+
+		return view('company.index',compact('table_data', 'countriesList'));
     }
 
     public function lists(Request $request){
@@ -58,9 +65,22 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(App\Http\Requests\CompanyRequest $request, Company $company)
     {
-        //
+        $data = $request->all();
+        $company->fill($data);
+
+        $company->name = $request->input('name');
+		$company->description = $request->input('description');
+		$company->save();
+
+		$this->logActivity(['module' => 'company','unique_id' => $company->id,'activity' => 'activity_added']);
+
+	    if($request->has('ajax_submit')){
+	        $response = ['message' => trans('messages.custom').' '.trans('messages.field').' '.trans('messages.added'), 'status' => 'success'];
+	        return response()->json($response, 200, array('Access-Controll-Allow-Origin' => '*'));
+	    }
+		return redirect()->back()->withSuccess(trans('messages.custom').' '.trans('messages.field').' '.trans('messages.added'));
     }
 
     /**
