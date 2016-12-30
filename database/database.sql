@@ -55,7 +55,7 @@ CREATE TABLE `backups` (
 CREATE TABLE `chat` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `message` text COLLATE utf8_unicode_ci,
+  `message` text COLLATE utf8mb4_general_ci,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
