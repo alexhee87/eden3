@@ -60,7 +60,7 @@ Class TemplateController extends Controller{
         foreach($templates as $template){
 
 			$rows[] = array(
-				'<div class="btn-group btn-group-xs">'.
+				'<div class="btn-group btn-group-xs center-block">'.
 				'<a href="#" data-href="/template/'.$template->id.'/edit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal"> <i class="fa fa-edit" data-toggle="tooltip" title="'.trans('messages.edit').'"></i></a> '.
 				(!$template->is_default ? delete_form(['template.destroy',$template->id],'template',1) : '').
 				'</div>',

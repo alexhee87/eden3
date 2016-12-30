@@ -32,7 +32,7 @@ Class EmailController extends Controller{
         foreach($emails as $email){
 
 			$rows[] = array(
-				'<div class="btn-group btn-group-xs">'.
+				'<div class="btn-group btn-group-xs center-block">'.
 				'<a href="#" data-href="/email/'.$email->id.'" class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal"> <i class="fa fa-arrow-circle-right" data-toggle="tooltip" title="'.trans('messages.view').'"></i></a></div>',
 				$email->from_address,
 				$email->to_address,

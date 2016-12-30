@@ -35,7 +35,7 @@ Class IpFilterController extends Controller{
 
         foreach($ip_filters as $ip_filter){
             $rows[] = array(
-                '<div class="btn-group btn-group-xs">'.
+                '<div class="btn-group btn-group-xs center-block">'.
                 '<a href="#" data-href="/ip-filter/'.$ip_filter->id.'/edit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal"> <i class="fa fa-edit" data-toggle="tooltip" title="'.trans('messages.edit').'"></i></a>'.
                 delete_form(['ip-filter.destroy',$ip_filter->id]).
                 '</div>',

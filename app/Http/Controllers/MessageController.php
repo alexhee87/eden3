@@ -203,7 +203,7 @@ Class MessageController extends Controller{
 			else
 				$starred = ($message->is_starred_receiver) ? 1 : 0;
 
-			$option = (($type != 'trash') ? '<div class="btn-group btn-group-xs"><a href="'.url('/message/'.$message->token).'" class="btn btn-default btn-xs" data-toggle="tooltip" title="'.trans('messages.view').'"> <i class="fa fa-arrow-circle-right"></i></a>' : '').
+			$option = (($type != 'trash') ? '<div class="btn-group btn-group-xs center-block"><a href="'.url('/message/'.$message->token).'" class="btn btn-default btn-xs" data-toggle="tooltip" title="'.trans('messages.view').'"> <i class="fa fa-arrow-circle-right"></i></a>' : '').
 				(($type != 'trash') ? '<a href="#" data-source="'.url('/message/starred').'" data-extra="&token='.$message->token.'" class="btn btn-default btn-xs" data-ajax="1"> <i class="fa fa-'.($starred ? 'star starred' : 'star-o').'"></i></a>' : '').
 				(($type == 'trash') ? '<a href="#" data-source="'.url('/message/restore').'" data-extra="&token='.$message->token.'" class="btn btn-default btn-xs" data-ajax="1"> <i class="fa fa-retweet" data-toggle="tooltip" data-title="'.trans('messages.restore').'"></i></a>' : '').
 				(($type != 'trash') ? delete_form(['message.trash',$message->id]) : delete_form(['message.destroy',$message->id])).'</div>';
@@ -226,7 +226,7 @@ Class MessageController extends Controller{
 					$show = 1;
 
 				if($show)
-					$rows[] = array('<div class="btn-group btn-group-xs">'.$option.'</div>', 
+					$rows[] = array('<div class="btn-group btn-group-xs center-block">'.$option.'</div>',
 						($unread) ? ('<strong>'.$source.'</strong>') : $source,
 						($unread) ? ('<strong>'.$message->subject.'</strong>') : $message->subject,
 						($unread) ? ('<strong>'.showDateTime($message->created_at).'</strong>') : showDateTime($message->created_at),

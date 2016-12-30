@@ -37,7 +37,7 @@ Class BackupController extends Controller{
         foreach($backups as $backup){
 
 			$rows[] = array(
-				'<div class="btn-group btn-group-xs">'.
+				'<div class="btn-group btn-group-xs center-block">'.
 				'<a href="/backup/'.$backup->id.'" class="btn btn-xs btn-default" > <i class="fa fa-download" data-toggle="tooltip" title="'.trans('messages.download').'"></i></a>'.
 				delete_form(['backup.destroy',$backup->id]).
 				'</div>',

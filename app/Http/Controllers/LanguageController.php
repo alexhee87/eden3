@@ -47,7 +47,7 @@ Class LanguageController extends Controller{
     		$percentage = ($translation_count) ? round(((count($trans)*100)/$translation_count),2) : 0;
 
 			$rows[] = array(
-				'<div class="btn-group btn-group-xs">'.
+				'<div class="btn-group btn-group-xs center-block">'.
 				'<a href="/language/'.$locale.'" class="btn btn-default btn-xs md-trigger"> <i class="fa fa-arrow-circle-right" title="'.trans('messages.view').'" data-toggle="tooltip"></i></a> '.
 				'<a href="#" data-href="/language/'.$locale.'/edit" class="btn btn-default btn-xs md-trigger" data-toggle="modal" data-target="#myModal"> <i class="fa fa-edit" title="'.trans('messages.edit').'" data-toggle="tooltip"></i></a> '.
 				delete_form(['language.destroy',$locale]).'</div>',

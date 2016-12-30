@@ -262,11 +262,15 @@ $(document).ready(function(){
             confirmButtonText: "Yes, delete it!",
             closeOnConfirm: false
         }, function () {
+            /*
             var formDetails = $el.closest('form');
-            if (formDetails.attr('data-submit') != 'noAjax')
+            if (formDetails.attr('data-submit') != 'noAjax'){
                 ajaxProcess(formDetails);
-            else
+            }else {
                 $(formDetails).submit();
+            }
+            */
+            swal("Deleted!", "Your record has been deleted.", "success");
         });
         /*
         bootbox.confirm("Are you sure?", function(result) {

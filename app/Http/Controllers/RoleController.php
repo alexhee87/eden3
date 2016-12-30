@@ -36,7 +36,7 @@ Class RoleController extends Controller{
 
         foreach($roles as $role){
             $rows[] = array(
-                '<div class="btn-group btn-group-xs">'.
+                '<div class="btn-group btn-group-xs center-block">'.
                 '<a href="#" data-href="'.url('/role/'.$role->id).'/edit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal"> <i class="fa fa-edit" data-toggle="tooltip" title="'.trans('messages.edit').'"></i></a>'.
 				'<a href="#" data-href="'.url('/role/'.$role->id).'/delete" class="btn btn-xs btn-danger btn-default" onclick="popDeleteMessage(this)"> <i class="fa fa-trash-o" data-toggle="tooltip" title="'.trans('role.destroy').'"></i></a>'.
                 '<span style="display: none">'.delete_form(['role.destroy',$role->id]).'</span>'.

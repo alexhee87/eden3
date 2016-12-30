@@ -23,7 +23,7 @@
                         {!! Form::input('text','name','',['class'=>'form-control','placeholder'=>trans('messages.country_name')]) !!}
 					</div>
 					<div class="form-group">
-						{!! Form::label('title',trans('messages.title'),[]) !!}
+						{!! Form::label('title',trans('messages.country_iso'),[]) !!}
 						{!! Form::input('text','iso_name','',['class'=>'form-control','placeholder'=>trans('messages.country_iso')]) !!}
 					</div>
                     {!! Form::submit(isset($buttonText) ? $buttonText : trans('messages.save'),['class' => 'btn btn-primary pull-right']) !!}

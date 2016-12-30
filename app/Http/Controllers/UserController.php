@@ -71,7 +71,7 @@ class UserController extends Controller
 
         foreach($users as $user){
             $row = array(
-                '<div class="btn-group btn-group-xs">'.
+                '<div class="btn-group btn-group-xs center-block center-block">'.
                 '<a href="'.url('/user/'.$user->id).'" class="btn btn-xs btn-default"> <i class="fa fa-arrow-circle-o-right" data-toggle="tooltip" title="'.trans('messages.view').'"></i></a>'.
                 (($user->status == 'active' && Entrust::can('change-user-status')) ? '<a href="#" class="btn btn-xs btn-default" data-ajax="1" data-extra="&user_id='.$user->id.'&status=ban" data-source="/change-user-status"> <i class="fa fa-ban" data-toggle="tooltip" title="'.trans('messages.ban').' '.trans('messages.user').'"></i></a>' : '').
                 (($user->status == 'banned' && Entrust::can('change-user-status')) ? '<a href="#" class="btn btn-xs btn-default" data-ajax="1" data-extra="&user_id='.$user->id.'&status=active" data-source="/change-user-status"> <i class="fa fa-check" data-toggle="tooltip" title="'.trans('messages.active').' '.trans('messages.user').'"></i></a>' : '').

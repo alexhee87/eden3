@@ -1,5 +1,5 @@
 <?php
-function delete_form($value,$param = array()){
+function delete_form($value, $param = array()){
     $name = (array_key_exists('name', $param)) ? $param['name'] : randomString(10);
     $form_option = ['method' => 'DELETE',
         'route' => $value,
@@ -8,10 +8,13 @@ function delete_form($value,$param = array()){
         ];
 
     $label = (array_key_exists('label', $param)) ? $param['label'] : '';
-    if(array_key_exists('refresh', $param))
+    if(array_key_exists('refresh', $param)){
         $form_option['data-refresh'] = $param['refresh'];
-    if(array_key_exists('ajax', $param))
+    }
+
+    if(array_key_exists('ajax', $param)){
         $form_option['data-submit'] = $param['ajax'];
+    }
 
     $form = Form::open($form_option);
     $form .= Html::decode(Form::button('<i class="fa fa-trash-o"></i> '.$label,['data-toggle' => 'tooltip', 'title' => trans('messages.delete'), 'class' => 'btn btn-danger btn-xs', 'data-submit-confirm-text' => 'Yes', 'type' => 'submit']));

@@ -71,7 +71,7 @@ Class PermissionController extends Controller{
 
         foreach($permissions as $permission){
             $rows[] = array(
-                ((!$permission->is_default) ? '<div class="btn-group btn-group-xs">'.
+                ((!$permission->is_default) ? '<div class="btn-group btn-group-xs center-block">'.
                 '<a href="#" data-href="/permission/'.$permission->id.'/edit" class="btn btn-xs btn-default" data-toggle="modal" data-target="#myModal"> <i class="fa fa-edit" data-toggle="tooltip" title="'.trans('messages.edit').'"></i></a>'.
                 '<a href="#" data-href="/permission/'.$permission->id.'/delete" class="btn btn-xs btn-danger btn-default" onclick="popDeleteMessage(this)"> <i class="fa fa-trash-o" data-toggle="tooltip" title="'.trans('permission.destroy').'"></i></a>'.
                 '<span style="display: none">'.delete_form(['permission.destroy',$permission->id]).'</span>'.
