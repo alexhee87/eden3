@@ -163,6 +163,13 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 	Route::resource('company', 'CompanyController');
     Route::post('/company', array('as' => 'company.create','uses' => 'CompanyController@create'));
 
+    //Location
+	Route::model('location','\App\Location');
+    Route::patch('/location/update/{id}',array('as' => 'location.update', 'uses' => 'LocationController@update'));
+	Route::post('/location/lists','LocationController@lists');
+	Route::resource('location', 'LocationController');
+    Route::post('/location/create', 'LocationController@create');
+
 
 	Route::model('user','\App\User');
 	Route::post('/user/lists','UserController@lists');
