@@ -116,14 +116,13 @@ class LocationController extends Controller
      */
     public function edit(Location $location){
 
-        $countries = Country::where('active', 1)->select('id', 'name')->get();
-        $countriesList = array();
-        foreach($countries as $country){
-            $countriesList[$country->id] = $country->name;
+        $companies = Company::where('active', 1)->select('id', 'name')->get();
+        $companiesList = array();
+        foreach($companies as $company){
+            $companiesList[$company->id] = $company->name;
         }
 
-
-		return view('location.edit',compact('location', 'countriesList'));
+		return view('location.edit',compact('location', 'companiesList'));
 	}
 
     /**

@@ -4,7 +4,7 @@
     <h4 class="modal-title">{!! trans('messages.edit').' '.trans('messages.company') !!}</h4>
 </div>
 <div class="modal-body">
-    {!! Form::model($company,['method' => 'PATCH','route' => ['location.create',$company->id] ,'class' => 'location-form','id' => 'location-form-edit']) !!}
+    {!! Form::model($location, ['method' => 'PATCH','route' => ['location.update', $location->id] ,'class' => 'location-form','id' => 'location-form-edit']) !!}
         @include('location._form', ['buttonText' => trans('messages.update')])
     {!! Form::close() !!}
     <div class="clearfix"></div>
