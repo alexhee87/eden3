@@ -171,7 +171,7 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
     Route::post('/location/create', 'LocationController@create');
 
     //Department
-	Route::model('department','\App\Location');
+	Route::model('department','\App\Department');
     Route::patch('/department/update/{id}',array('as' => 'department.update', 'uses' => 'DepartmentController@update'));
 	Route::post('/department/lists','DepartmentController@lists');
 	Route::resource('department', 'DepartmentController');
