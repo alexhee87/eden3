@@ -177,6 +177,13 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 	Route::resource('department', 'DepartmentController');
     Route::post('/department', array('as' => 'department.create','uses' => 'DepartmentController@create'));
 
+    //Team
+	Route::model('team','\App\Team');
+    Route::patch('/team/update/{id}',array('as' => 'department.update', 'uses' => 'TeamController@update'));
+	Route::post('/team/lists','TeamController@lists');
+	Route::resource('team', 'TeamController');
+    Route::post('/team', array('as' => 'team.create','uses' => 'TeamController@create'));
+
 
 	Route::model('user','\App\User');
 	Route::post('/user/lists','UserController@lists');
