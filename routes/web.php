@@ -170,6 +170,13 @@ Route::group(['middleware' => ['auth','web','account','two_factor_auth','lock_sc
 	Route::resource('location', 'LocationController');
     Route::post('/location/create', 'LocationController@create');
 
+    //Department
+	Route::model('department','\App\Location');
+    Route::patch('/department/update/{id}',array('as' => 'department.update', 'uses' => 'DepartmentController@update'));
+	Route::post('/department/lists','DepartmentController@lists');
+	Route::resource('department', 'DepartmentController');
+    Route::post('/department', array('as' => 'department.create','uses' => 'DepartmentController@create'));
+
 
 	Route::model('user','\App\User');
 	Route::post('/user/lists','UserController@lists');
