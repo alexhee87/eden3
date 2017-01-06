@@ -38,7 +38,7 @@ class UserRequest extends FormRequest
                     'first_name' => 'required',
                     'last_name' => 'required',
                     'username' => 'sometimes|required|max:255|unique:users|regex:/^[a-zA-Z0-9_\.\-]*$/',
-                    'email' => 'required|email|max:255|unique:users',
+                    'email' => 'email|max:255|unique:users',
                     'password' => 'required|min:6|confirmed'
                 ];
 
@@ -54,7 +54,7 @@ class UserRequest extends FormRequest
                     'first_name' => 'required',
                     'last_name' => 'required',
                     'username' => 'sometimes|required|max:255|regex:/^[a-zA-Z0-9_\.\-]*$/|unique:users,username,'.$user->id,
-                    'email' => 'required|email|max:255|unique:users,email'.$user->id,
+                    'email' => 'email|max:255|unique:users,email'.$user->id,
                     'password' => 'required|min:6|confirmed'
                 ];
 
